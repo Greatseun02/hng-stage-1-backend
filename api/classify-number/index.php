@@ -3,7 +3,7 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json;");
 header("Access-Control-Allow-Methods: GET");
 
-if($_SERVER['REQUEST_METHOD'] === "GET"){
+if($_SERVER['REQUEST_METHOD'] === "GET" && isset($_GET["number"])){
     $number = $_GET["number"];
     $return=[];
 
@@ -47,5 +47,9 @@ if($_SERVER['REQUEST_METHOD'] === "GET"){
     }
 
     echo json_encode($return);
+}else{
+    http_response_code(400);
+    echo json_encode(["error" => true, "message" => "Invalid or missing 'number' parameter."]);
+    exit;
 }
 ?>

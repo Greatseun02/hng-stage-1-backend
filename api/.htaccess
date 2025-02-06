@@ -4,4 +4,4 @@ RewriteBase /api/
 # Redirect all requests to api/number/index.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^number$ number/index.php [L,QSA]
+RewriteRule ^classify-number$ classify-number/index.php [L,QSA]
