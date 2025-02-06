@@ -5,10 +5,10 @@ header("Access-Control-Allow-Methods: GET");
 
 if($_SERVER['REQUEST_METHOD'] === "GET" && isset($_GET["number"])){
     $number = $_GET["number"];
-    $abs_number = abs($number);
     $return=[];
 
     if(is_numeric($number)){
+        $abs_number = abs($number);
         $number *= 1;
         if(is_integer($number)){
             include_once "../../helper/prime.php";
