@@ -14,8 +14,10 @@ if($_SERVER['REQUEST_METHOD'] === "GET"){
             include_once "../../helper/getProp.php";
             include_once "../../helper/getDigitSum.php";
             include_once "../../helper/getFunFact.php";
+            include_once "../../helper/getPerfect.php";
 
             $isPrime=checkPrime($number);
+            $isPerfect=getPerfect($number);
             $prop=getProp($number);
             $digit_sum=getDigitSum($number);
             $fun_fact = getFunFact($number);
@@ -24,6 +26,7 @@ if($_SERVER['REQUEST_METHOD'] === "GET"){
             $return = [
                 "number"=> $number,
                 "is_prime"=> $isPrime,
+                "is_perfect"=>$isPerfect,
                 "properties"=> $prop,
                 "digit_sum"=> $digit_sum,
                 "fun_fact"=> $fun_fact,
@@ -31,7 +34,7 @@ if($_SERVER['REQUEST_METHOD'] === "GET"){
         }else{
             http_response_code(400);
             $return = [
-                "number"=>"not integer",
+                "number"=>"alphabet",
                 "error"=> true
             ];
         }
