@@ -35,7 +35,7 @@ if($_SERVER['REQUEST_METHOD'] === "GET" && isset($_GET["number"])){
         }else{
             http_response_code(400);
             $return = [
-                "number"=>"not integer",
+                "number"=>"alphabet",
                 "error"=> true
             ];
         }
@@ -50,7 +50,7 @@ if($_SERVER['REQUEST_METHOD'] === "GET" && isset($_GET["number"])){
     echo json_encode($return);
 }else{
     http_response_code(400);
-    echo json_encode(["number" => "Invalid or missing 'number' parameter.", "error" => true]);
+    echo json_encode(["number" => "alphabet", "error" => true]);
     exit;
 }
 ?>

@@ -12,6 +12,6 @@
         }
     }
     
-    if ($sum == $number) return True; else return False; 
+    if ($sum == $number) return true; else return false; 
     }
 ?>
