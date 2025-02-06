@@ -5,6 +5,7 @@ header("Access-Control-Allow-Methods: GET");
 
 if($_SERVER['REQUEST_METHOD'] === "GET" && isset($_GET["number"])){
     $number = $_GET["number"];
+    $abs_number = abs($number);
     $return=[];
 
     if(is_numeric($number)){
@@ -16,10 +17,10 @@ if($_SERVER['REQUEST_METHOD'] === "GET" && isset($_GET["number"])){
             include_once "../../helper/getFunFact.php";
             include_once "../../helper/getPerfect.php";
 
-            $isPrime=checkPrime($number);
-            $isPerfect=getPerfect($number);
-            $prop=getProp($number);
-            $digit_sum=getDigitSum($number);
+            $isPrime=checkPrime($abs_number);
+            $isPerfect=getPerfect($abs_number);
+            $prop=getProp($abs_number);
+            $digit_sum=getDigitSum($abs_number);
             $fun_fact = getFunFact($number);
 
             http_response_code(200);
