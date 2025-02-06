@@ -11,4 +11,4 @@ COPY . .
 EXPOSE 8080
 
 # Start the PHP built-in server
-CMD ["php", "-S", "0.0.0.0:8080", "-t", "api/number"]
+CMD ["php", "-S", "0.0.0.0:8080", "-t", "api/classify-number"]
