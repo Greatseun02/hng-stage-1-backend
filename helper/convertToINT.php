@@ -3,4 +3,3 @@
         return $number_string * 1;
     }
 ?>
-

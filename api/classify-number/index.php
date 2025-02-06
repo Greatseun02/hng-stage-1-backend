@@ -1,6 +1,7 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json;");
+header("Access-Control-Allow-Methods: GET");
 
 if($_SERVER['REQUEST_METHOD'] === "GET"){
     $number = $_GET["number"];
@@ -19,6 +20,7 @@ if($_SERVER['REQUEST_METHOD'] === "GET"){
             $digit_sum=getDigitSum($number);
             $fun_fact = getFunFact($number);
 
+            http_response_code(200);
             $return = [
                 "number"=> $number,
                 "is_prime"=> $isPrime,
@@ -27,12 +29,14 @@ if($_SERVER['REQUEST_METHOD'] === "GET"){
                 "fun_fact"=> $fun_fact,
             ];
         }else{
+            http_response_code(400);
             $return = [
                 "number"=>"not integer",
                 "error"=> true
             ];
         }
     }else{
+        http_response_code(400);
         $return = [
             "number"=>"alphabet",
             "error"=> true
@@ -40,6 +44,5 @@ if($_SERVER['REQUEST_METHOD'] === "GET"){
     }
 
     echo json_encode($return);
-
 }
 ?>
