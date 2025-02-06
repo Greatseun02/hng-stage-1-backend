@@ -1,0 +1,15 @@
+{
+    "name": "goodn/hng-stage-1-backend",
+    "autoload": {
+        "psr-4": {
+            "Goodn\\HngStage1Backend\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Goodnews Adewole",
+            "email": "goodnews.adewole@example.com"
+        }
+    ],
+    "require": {}
+}
